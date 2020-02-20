@@ -12,6 +12,8 @@ else:
 
 os.system(clc)
 
+source_code = ''
+
 while True :
 
     print('.:: Choose your mode :')
@@ -44,9 +46,16 @@ while True :
         print('\t==================')
         print('\tRead from Terminal')
         print('\t==================\n\n')
-        source_code = input()
-        source_code = source_code + '\n'
-        break
+        print('\t Finish = $$')
+        while True :
+            rd = input()
+            if(rd.find('$$') != -1):
+                tmp = rd.find('$$')
+                source_code = source_code + rd[0:tmp] + '\n'
+                break
+            else:
+                source_code = source_code + rd +'\n'
+    break
 
 
 
